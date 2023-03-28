@@ -1,0 +1,602 @@
+/* utilites start */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Deofonts;
+}
+
+@font-face {
+  font-family: Deofonts;
+  src: url(GIL_____.TTF);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+p {
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+/* The sidepanel menu */
+.sidepanel {
+  height: 100%; /* Specify a height */
+  width: 300px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #ff001d; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 80px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+}
+
+/* The sidepanel links */
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #000;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+  color: #f1f1f1;
+  margin-left: 10px;
+}
+.sidepanel a:active {
+  color: #f1f1f1;
+  font-weight: 700;
+}
+
+
+.logo{
+  padding: 20px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+/* 2nd Navbar */
+header{
+  display: none;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #ff001d;
+  padding: 8px;
+  top: 0;
+  position: sticky;
+  z-index: 9;
+  inset: 1000;
+
+}
+
+.menu{
+  cursor: pointer;
+  display: none;
+}
+
+nav {
+  flex: 1;
+  text-align: right;
+}
+
+nav ul {
+  display: inline-block;
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding-bottom: 5px;
+  color: #fff;
+  font-size: 1.4em;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+a {
+  color: currentColor;
+}
+
+
+nav ul li a::after {
+  content: "";
+  border-radius: 15px;
+  width: 0%;
+  height: 1.2px;
+  position: absolute;
+  bottom: -3px;
+  background-color: #fff;
+  display: flex;
+  transform-origin: left;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+  transform-origin: left;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .sidepanel{
+    display: none;
+  }
+
+  header{
+  display: block;
+}
+
+.logo a{
+  text-decoration: none;
+}
+
+header{
+  position: sticky;
+  top: 0%;
+  z-index: 9;
+  inset: 1000;
+}
+  nav ul {
+    position: absolute;
+    top: 70px;
+    height: fit-content;
+    padding: 15px;
+    z-index: 5;
+    left: 0;
+    background: #ff001d;
+    width: 100%;
+    transition: all 2s;
+    overflow: hidden;
+  }
+
+  nav ul li {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+  }
+
+  nav ul li a {
+    text-align: left;
+    color: #fff;
+    padding: 5px;
+  }
+
+  .menu {
+    display: block;
+   margin-right: 10px;
+  }
+}
+/*  */
+/* .nav ends here */
+main {
+  padding: 20px;
+  margin-left: 300px;
+}
+
+main h1 {
+  font-size: 60px;
+  margin-top: 30px;
+}
+.title {
+  position: relative;
+  padding-bottom: 10px;
+  color: rgb(255, 50, 50);
+}
+.title::after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  position: absolute;
+  border-radius: 10px;
+  border: 5px solid red;
+}
+
+
+
+@media screen and (max-width: 790px){
+  .title{
+    font-size: 30px;
+  }
+
+  .title::after{
+    width: 20px;
+  }
+
+  main h1{
+    font-size: 38px;
+    margin-bottom: -15px;
+  }
+
+  main{
+    padding: 7px;
+    margin: 0px auto;
+  }
+  .container{
+  padding: 10px;
+}
+ .mySidebar ul {
+    position: absolute;
+    top: 70px;
+    z-index: 9;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transition: all 2s;
+    overflow: hidden;
+  }
+
+  .mySidebar ul li {
+    display: block;
+    margin-top: 10px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+  }
+
+  .mySidebar ul li a {
+    text-align: center;
+    color: var(--text);
+  }
+
+  .menu {
+    display: block;
+  }
+}
+
+/* lightbox starts */
+.image-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 40px;
+}
+
+.img-box {
+  position: relative;
+  width: 490px;
+  height: 300px;
+}
+
+.img-box img {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-align: center;
+}
+
+.img-box:hover .overlay {
+  opacity: 1;
+}
+
+@media screen and (max-width: 790px){
+  .img-box {
+  width: 100%;
+  height: auto;
+}
+}
+
+@media screen and (min-width:800px) and (max-width: 1280px){
+  .img-box {
+ width: 460px;
+  height: 300px;
+}
+}
+@media screen and (min-width:884px) and (max-width: 1104px){
+  .img-box {
+ width: 100%;
+  height: 300px;
+}
+}
+/* lightbox ends */
+/* services */
+.services {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+/*  */
+
+/*  */
+.row {
+  margin-top: 40px;
+  display: flex;
+  gap: 17px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.col {
+  flex-basis: 28%;
+  min-width: 230px;
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+}
+
+.profile {
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  background-color: rgb(226, 17, 17);
+  padding: 12px;
+}
+
+.profile img {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.profile h2 {
+  margin: 25px 0 10px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.profile p {
+  margin-bottom: 10px;
+  font-size: 17px;
+  color: #420000;
+}
+
+.col::before,
+.col::after {
+  content: "";
+  height: 0;
+  width: 0;
+  background: linear-gradient(135deg, #ff001d, #ff001d);
+  position: absolute;
+  
+}
+
+.col::before {
+  left: 0;
+  z-index: -1;
+  top: -8px;
+}
+
+.col::after {
+  right: 0;
+  z-index: -1;
+  bottom: -8px;
+}
+
+@keyframes stroke {
+  0%{
+    height: 5px;
+    width: 0;
+  }
+  50%{
+    height: 5px;
+    width: calc(100% + 5px);
+  }
+  100%{
+    height: calc(100% + 16px);
+    width: calc(100% + 5px);
+  }
+}
+
+.col:hover:before,
+.col:hover:after{
+animation: stroke 0.5s linear forwards;
+}
+
+.card-con{
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width:790px) {
+  .row{
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+/*  */
+/*  */
+.packages-table{
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.packages ul{
+  list-style: none;
+  padding: 15px 50px;
+  text-align: center;
+}
+
+.packages li{
+  padding: 20px;
+  font-size: 18px;
+  border-bottom: 0.7px solid #ddd;
+}
+
+.Basic{
+  padding: 20px;
+  color: #fff;
+  width: 100%;
+  background-color: #000;
+}
+
+.basic-con{
+  background-color: #ddd;
+}
+
+.Pro{
+   padding: 20px;
+  color: #fff;
+  background-color: #ff001d;
+}
+
+.pro-con{
+ background-color: #ddd;
+}
+
+.btn{
+  padding: 15px 22px;
+  background-color: #ff001d;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all .3s;
+  color: #fff;
+}
+.btn:hover{
+  background-color: #000;
+}
+
+.btn2{
+  padding: 15px 22px;
+  background-color: whitesmoke;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #000;
+}
+.btn2:hover{
+  background-color: #000;
+  color: #fff;
+}
+
+@media screen and (max-width:800px){
+  .packages-table{
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/*  */
+
+/* form */
+
+.form-container {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+form {
+  padding: 20px;
+}
+
+form input {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  border: 1px solid #ff001d;
+  background-color: transparent;
+}
+
+form textarea {
+  margin-top: 10px;
+  outline: none;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ff001d;
+  border-radius: 5px;
+  color: #000;
+  background-color: transparent;
+}
+
+/*  */
+
+form button {
+  padding: 16px 32px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ff001d;
+  border-radius: 10px;
+  background-color: #ff001d;
+  transition: all 1s;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+form button i {
+  padding-right: 15px;
+}
+
+form button:hover {
+  font-weight: 500;
+  color: #000;
+  background-color: transparent;
+  border: 1px solid #000;
+}
+
+form button span {
+  display: inline-block;
+  width: 0px;
+  overflow: hidden;
+  transition: width 0.5s;
+}
+
+form button:hover span {
+  width: 30px;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact input {
+  width: 48%;
+}
+
+::placeholder {
+  color: #000;
+  text-transform: capitalize;
+  font-size: 15px;
+}
+/*  */
